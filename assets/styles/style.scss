@@ -1,0 +1,15 @@
+@import "variables";
+
+// Bootstrap grid
+$enable-flex: true;
+$enable-grid-classes: true;
+
+@import '../../bootstrap-4/scss/_variables.scss';
+@import '../../bootstrap-4/scss/_mixins.scss';
+@import '../../bootstrap-4/scss/_reboot.scss';
+@import '../../bootstrap-4/scss/_grid.scss';
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
