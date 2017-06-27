@@ -3,7 +3,10 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-let extractStyles = new ExtractTextPlugin('[name].css')
+let extractStyles = new ExtractTextPlugin({
+  filename: 'css/[name].css',
+  allChunks: true,
+})
 let extractHtml = new ExtractTextPlugin('[name].html')
 
 let config = {
@@ -18,14 +21,13 @@ let config = {
   },
   entry: {
     index: [
-      path.resolve(__dirname, 'templates/index.pug')
+      path.resolve(__dirname, 'templates/index.pug'),
+      path.resolve(__dirname, 'assets/styles/style.scss'),
+      path.resolve(__dirname, 'assets/js/navigation.js')
     ],
     project: [
       path.resolve(__dirname, 'templates/project.pug')
     ],
-    'css/application': [
-      path.resolve(__dirname, 'assets/styles/style.scss')
-    ]
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -35,14 +37,14 @@ let config = {
     rules: [
       {
         test: /\.pug$/,
-        loader: extractHtml.extract({
-          loader: ['html-loader', 'pug-html-loader?pretty&exports=false']
+        use: extractHtml.extract({
+          use: ['html-loader', 'pug-html-loader?pretty&exports=false']
         })
       },
       {
         test: /\.scss$/,
-        loader: extractStyles.extract({
-          loader: [
+        use: extractStyles.extract({
+          use: [
             {
               loader: 'css-loader'
             },
@@ -58,7 +60,13 @@ let config = {
       {
         test: /\.js$/,
         exclude: /node_modules\/*/,
-        use: ['babel-loader'],
+        loader: 'babel-loader', // use this (babel-core) loader
+        options: {
+          presets: [
+            ['es2015',
+            { 'modules': false }]  // Stops babel from transforming ES6 modules into CommonJS modules, enableing tree-shaking of unsed code
+          ]
+        }
       }
     ]
   },
@@ -79,7 +87,6 @@ let config = {
         },
       }
     }),
-    new ExtractTextPlugin("styles.css"),
     extractStyles,
     extractHtml
   ]
