@@ -15,90 +15,98 @@ html {
 }
 
 .container--main {
-  margin-top: 72px;
+
 }
 
 .site-header {
-  position: absolute;
   top: 0;
   width: 100%;
   background: $secondaryBackground;
   color: $titles;
-  font-family: 'Dosis', sans-serif;
-  height: 72px;
+  font-family: 'Montserrat', sans-serif;
+  border-bottom: 6px solid grey;
+  margin-bottom: 25px;
 }
 
 .site-nav {
-  overflow: hidden;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
 
   a {
-    float: left;
-    display: block;
-    background: $secondaryBackTransparent;
-    color: $titles;
-    text-align: center;
     padding: 20px;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 1.2rem;
-
-    &#logo {
-      font-size: 1.3rem;
-    }
-    
-    &.active {
-      font-weight: bold;
-      color: $action;
-    }
-    
-    &:hover{
-      background: $secondaryBackground;
-      color: $action;
-    }
   }
-  /* Hide the link that should open and close the topnav on small screens */
-  .icon {
-    display: none;
-  }
-}
 
-/* When the screen is less than 991 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 991px) {
-  .site-nav {
-    display: block;
-    
-    a:not(:first-child) {display: none;}
-    a.icon {
-      float: right;
-      display: block;
-    }
-    a#logo {
-      float: left;
-    }
-  }
-}
+  .links {
+    font-weight: bold;
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 991px) {
-  .site-nav.responsive {
-      position: relative;
-      
-      a {
-        float: none;
-        display: block;
-        text-align: left;
+    a {
+      color: $titles;
+      &:hover {
+        color: $action;
       }
-      
-      a.icon {
+    }
+  }
+}
+
+a.logo {
+    color: $action;
+    font-family: 'Sonsie One';
+    padding: 0;
+
+    .firstLetter {
+      &:before{
         position: absolute;
-        right: 0;
+        background: lightGreen;
+        color: white;
+        border-radius: 0 0 50% 50%;
+        content: "K";
+        height: 90px;
+        width: 90px;
         top: 0;
-      }
-      
-      a#logo {
-        float: none;
+        // margin-left: 20px;
+        font-size: 4rem;
+        line-height: 5.5rem;
+        // font-family: Sonsie One;
+        text-align: center;
       }
     }
+
+    .rest {
+      margin-left: 100px;
+    }
+  }
+
+@media (max-width: 500px) {
+  .site-nav {
+    height: 40px;
+
+    a {
+      padding: 5px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  a.logo .firstLetter {
+    &:before{ 
+      height: 60px;
+      width: 60px;
+
+      font-size: 3rem;
+      line-height: 3.5rem;
+    }
+  }
+
+  a.logo .rest {
+    margin-left: 65px;
+  }
+}
+
+@media (max-width: 340px) {
+  .site-nav a {
+    font-size: 0.7rem;
+  }
 }
