@@ -25,9 +25,33 @@ let config = {
       path.resolve(__dirname, 'assets/styles/style.scss'),
       path.resolve(__dirname, 'assets/js/navigation.js')
     ],
-    project: [
-      path.resolve(__dirname, 'templates/project.pug')
+    pintclone: [
+      path.resolve(__dirname, 'templates/pintclone.pug')
     ],
+    multilingual: [
+      path.resolve(__dirname, 'templates/multilingual.pug')
+    ],
+    bookTrader: [
+      path.resolve(__dirname, 'templates/bookTrader.pug')
+    ],
+    compareStocks: [
+      path.resolve(__dirname, 'templates/compareStocks.pug')
+    ],
+    barsvp: [
+      path.resolve(__dirname, 'templates/barsvp.pug')
+    ],
+    quickPoll: [
+      path.resolve(__dirname, 'templates/quickPoll.pug')
+    ],
+    boilerplate: [
+      path.resolve(__dirname, 'templates/boilerplate.pug')
+    ],
+    d3: [
+      path.resolve(__dirname, 'templates/d3.pug')
+    ],
+    frontend: [
+      path.resolve(__dirname, 'templates/frontend.pug')
+    ]
   },
   output: {
     path: path.resolve(__dirname, 'build'),

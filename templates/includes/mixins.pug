@@ -1,0 +1,13 @@
+mixin project(img, title, subTitle, demoLink, sourceLink)
+  .row
+    .col-md-6.img-wrapper
+      img.project-img(src=img)
+      if demoLink
+       a.btn(href=demoLink target='_blank' rel='noopener noreferrer') View Demo
+      if sourceLink
+        a.btn(href=sourceLink target='_blank' rel='noopener noreferrer') View Source
+    .col-md-6.text-wrapper
+      h1=title
+      if subTitle
+        h3=subTitle
+      block

@@ -16,6 +16,11 @@ $enable-grid-classes: true;
   font-family: 'Montserrat', sans-serif;
 }
 
+@mixin img {
+  width: 100%;
+  height: auto;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,14 +33,37 @@ body {
   padding-bottom: 120px;
 }
 
+.btn {
+  background: $action;
+  color: white;
+  border: solid 1px darken($action, 10);
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+
+  &:hover,&:focus,&:active {
+    text-decoration: none;
+    color: white;
+    background: darken($action, 5);
+  }
+}
+
 .bw {display: block;}
 .clr {display: none;}
+
+.img-wrapper {
+  text-align: center;
+}
 
 .main-heading {
   color: $titles;
   text-align: center;
   font-size: 3rem;
-  text-transform: uppercase;
 }
 
 .project {
@@ -59,8 +87,9 @@ body {
 }
 
 .project-img {
-  width: 100%;
-  height: auto;
+  @include img;
+  border: 6px solid $divider;
+  border-radius: 5px;
 }
 
 .project-label {
@@ -194,6 +223,23 @@ a.logo {
   }
 }
 
+.text-wrapper {
+  p {
+    text-align: justify;
+  }
+}
+
+.thumbnail-img {
+  @include img;
+}
+
+@media (max-width: 991px) {
+  .btn {
+    font-size: 1rem;
+
+  }
+}
+
 @media (max-width: 767px) {
   .project-label .project-title {
     font-size: 1rem;
@@ -241,6 +287,11 @@ a.logo {
 }
 
 @media (max-width: 380px) {
+  .btn {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
   .project-label :first-child {
     margin-top: 0;
   }

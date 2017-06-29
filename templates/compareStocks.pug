@@ -1,0 +1,13 @@
+extends layout
+
+include includes/mixins.pug
+
+block content
+  +project(
+    '../assets/images/compareStocks.png',
+    'Compare Stocks',
+    '',
+    'https://compare-stocks.herokuapp.com/',
+    'https://github.com/kevinnorris/compareStocks'
+  )
+    p

@@ -1,0 +1,14 @@
+extends layout
+
+include includes/mixins.pug
+
+block content
+  +project(
+    '../assets/images/quickPoll.png',
+    'Quick Poll',
+    'Voting App',
+    'https://qckvote.herokuapp.com/',
+    'https://github.com/kevinnorris/votingApp'
+  )
+    p
+

@@ -3,27 +3,27 @@ extends layout
 mixin projectThumbnail(imgBw, imgColor, name, link)
     .col-lg-4.col-md-6.col-sm-6
         .project
-            a(href=link target='_blank' rel='noopener noreferrer')
+            a(href=link)
                 span.project-label
                     block
-                img.project-img.bw(src=imgBw alt=name)
-                img.project-img.clr(src=imgColor alt=name)
+                img.thumbnail-img.bw(src=imgBw alt=name)
+                img.thumbnail-img.clr(src=imgColor alt=name)
 
 
 block content
-    .row
+    #projects.row
         +projectThumbnail(
             '../assets/images/pintclone_bw.jpg',
             '../assets/images/pintclone.jpg',
             'Pintclone',
-            'https://pintclone.herokuapp.com/'
+            '/pintclone.html'
             )
             p.project-title Pinterest Clone
         +projectThumbnail(
             '../assets/images/multilingual_bw.jpg',
             '../assets/images/multilingual.jpg',
             'Multilingual Portfolio',
-            'http://sigridnorris.com'
+            '/multilingual.html'
             )
             p.project-title Multilingual
             p.project-title Portfolio
@@ -31,7 +31,7 @@ block content
             '../assets/images/bookTrader_bw.png',
             '../assets/images/bookTrader.png',
             'Book Trader',
-            'https://book-trader-.herokuapp.com/'
+            '/bookTrader.html'
             )
             p.project-title Book Trading
             p.project-title Club 
@@ -39,43 +39,43 @@ block content
             '../assets/images/compareStocks_bw.png',
             '../assets/images/compareStocks.png',
             'Compare Stocks',
-            'https://compare-stocks.herokuapp.com/'
+            '/compareStocks.html'
             )
             p.project-title Compare Stocks
         +projectThumbnail(
             '../assets/images/barsvp_bw.jpg',
             '../assets/images/barsvp.jpg',
             'BaRSVP',
-            'https://barsvp.herokuapp.com/'
+            '/barsvp.html'
             )
             p.project-title Nightlife
             p.project-title Coordination
         +projectThumbnail(
-            '../assets/images/quickvote_bw.png',
-            '../assets/images/quickvote.png',
+            '../assets/images/quickPoll_bw.png',
+            '../assets/images/quickPoll.png',
             'Quick Poll',
-            'https://qckvote.herokuapp.com/'
+            '/quickPoll.html'
             )
             p.project-title Voting App
         +projectThumbnail(
             '../assets/images/boilerplate_bw.jpg',
             '../assets/images/boilerplate.jpg',
             'Full Stack Boilerplate',
-            'https://github.com/kevinnorris/FCC_Dynamic_Web_Boilerplate'
+            '/boilerplate.html'
             )
             p.project-title Full Stack
             p.project-title Boilerplate
         +projectThumbnail(
-            '../assets/images/D3_bw.jpg',
-            '../assets/images/D3.jpg',
+            '../assets/images/d3_bw.jpg',
+            '../assets/images/d3.jpg',
             'D3 Projects',
-            'https://kevinnorris.github.io/MeteoriteMap/'
+            '/d3.html'
             )
             p.project-title D3 Projects
         +projectThumbnail(
-            '../assets/images/FrontEnd_bw.jpg',
-            '../assets/images/FrontEnd.jpg',
+            '../assets/images/frontend_bw.jpg',
+            '../assets/images/frontend.jpg',
             'Frontend Projects',
-            'https://kevinnorris.github.io/MeteoriteMap/'
+            '/frontend.html'
             )
             p.project-title Frontend Projects
