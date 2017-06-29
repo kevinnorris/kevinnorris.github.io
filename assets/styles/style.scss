@@ -9,22 +9,89 @@ $enable-grid-classes: true;
 @import '../../bootstrap-4/scss/_reboot.scss';
 @import '../../bootstrap-4/scss/_grid.scss';
 
+@mixin header-footer {
+  width: 100%;
+  background: $secondaryBackground;
+  color: $titles;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container--main {
+body {
+  background: $background;
+}
 
+.bw {display: block;}
+.clr {display: none;}
+
+.mainHeading {
+  color: $titles;
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.project {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 8px solid $divider;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  &:hover{
+    border-color: $secondaryBackground;
+    
+    .project-label{
+      bottom: 0;
+    }
+    
+    .bw{display: none;}
+    .clr{display: block;}
+  }
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+}
+
+.project-label {
+  position: absolute;
+  height: 33%;
+  width: 100%;
+  background: rgba(13,19,19,0.9);
+  font-family: Montserrat;
+  bottom: -33%;
+  transition: 0.2s linear;
+
+  .project-title{
+    color: $action;
+    text-align: center;
+    margin: 6px 0;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  p{
+    text-align: center;
+    color: $text;
+    margin-top: 0;
+  }
+
+  :first-child {
+    margin-top: 6px;
+  }
 }
 
 .site-header {
+  @include header-footer;
   top: 0;
-  width: 100%;
-  background: $secondaryBackground;
-  color: $titles;
   font-family: 'Montserrat', sans-serif;
-  border-bottom: 6px solid grey;
+  border-bottom: 6px solid $divider;
   margin-bottom: 25px;
 }
 
@@ -60,7 +127,7 @@ a.logo {
     .firstLetter {
       &:before{
         position: absolute;
-        background: lightGreen;
+        background: $action;
         color: white;
         border-radius: 0 0 50% 50%;
         content: "K";
@@ -68,17 +135,56 @@ a.logo {
         width: 90px;
         top: 0;
         // margin-left: 20px;
-        font-size: 4rem;
-        line-height: 5.5rem;
+        font-size: 4.5rem;
+        line-height: 4.5rem;
         // font-family: Sonsie One;
         text-align: center;
       }
     }
 
     .rest {
-      margin-left: 100px;
+      margin-left: 94px;
     }
   }
+
+.site-footer {
+  @include header-footer;
+  border-top: 6px solid $divider;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  text-align: center;
+}
+
+.footer-header {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.footer-link {
+  color: $text;
+  cursor: pointer;
+
+  &:hover,&:focus,&:active {
+    color: $text;
+  }
+}
+
+.social-icon {
+  color: $text;
+  cursor: pointer;
+  font-size: 3rem;
+  padding: 0 10px;
+  text-decoration: none;
+
+  &:hover,&:focus,&:active {
+    color: $text;
+    text-decoration: none;
+  }
+}
 
 @media (max-width: 500px) {
   .site-nav {
@@ -96,7 +202,7 @@ a.logo {
       width: 60px;
 
       font-size: 3rem;
-      line-height: 3.5rem;
+      line-height: 3rem;
     }
   }
 
@@ -105,7 +211,15 @@ a.logo {
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 380px) {
+  .project-label :first-child {
+    margin-top: 0;
+  }
+
+  .project-label .project-title {
+    font-size: 1.3rem;
+  }
+
   .site-nav a {
     font-size: 0.7rem;
   }

@@ -6,7 +6,7 @@
   "author": "Kevin Norris",
   "license": "MIT",
   "scripts": {
-    "server": "webpack-dev-server",
+    "server": "webpack-dev-server -d",
     "clean": "rm -rf build && mkdir build",
     "build": "npm run clean && webpack"
   },
@@ -19,6 +19,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
     "html-loader": "^0.4.5",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",

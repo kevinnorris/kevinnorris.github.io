@@ -67,6 +67,10 @@ let config = {
             { 'modules': false }]  // Stops babel from transforming ES6 modules into CommonJS modules, enableing tree-shaking of unsed code
           ]
         }
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'file-loader'
       }
     ]
   },
