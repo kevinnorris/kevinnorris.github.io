@@ -49,6 +49,9 @@ let config = {
     d3: [
       path.resolve(__dirname, 'templates/d3.pug')
     ],
+    react: [
+      path.resolve(__dirname, 'templates/react.pug')
+    ],
     frontend: [
       path.resolve(__dirname, 'templates/frontend.pug')
     ]
