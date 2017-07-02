@@ -34,9 +34,9 @@ body {
 }
 
 .btn {
-  background: $action;
+  background: darken($action, 5);
   color: white;
-  border: solid 1px darken($action, 10);
+  border: solid 1px darken($action, 20);
   border-radius: 5px;
   cursor: pointer;
   display: inline-block;
@@ -49,12 +49,20 @@ body {
   &:hover,&:focus,&:active {
     text-decoration: none;
     color: white;
-    background: darken($action, 5);
+    background: darken($action, 15);
   }
 }
 
 .bw {display: block;}
 .clr {display: none;}
+
+.devicon-plain {
+  max-width: 3rem;
+
+  path {
+    fill: grey;
+  }
+}
 
 .img-wrapper {
   text-align: center;
@@ -64,6 +72,11 @@ body {
   color: $titles;
   text-align: center;
   font-size: 3rem;
+}
+
+.note {
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 .project {
@@ -84,6 +97,10 @@ body {
     .bw{display: none;}
     .clr{display: block;}
   }
+}
+
+#projects {
+  margin-top: 20px;
 }
 
 .project-img {
@@ -150,6 +167,14 @@ body {
         color: $action;
       }
     }
+
+    :first-child {
+      padding-left: 0;
+    }
+
+    :last-child {
+      padding-right: 0;
+    }
   }
 }
 
@@ -171,7 +196,6 @@ a.logo {
         // margin-left: 20px;
         font-size: 4.5rem;
         line-height: 4.5rem;
-        // font-family: Sonsie One;
         text-align: center;
       }
     }
@@ -223,9 +247,22 @@ a.logo {
   }
 }
 
+.tech-title {
+  font-weight: bold;
+}
+
 .text-wrapper {
   p {
     text-align: justify;
+  }
+}
+
+.title {
+  text-align: center;
+  font-family: 'Sonsie One';
+
+  .firstLetter {
+    font-size: 150%;
   }
 }
 
@@ -244,8 +281,14 @@ a.logo {
   .project-label .project-title {
     font-size: 1rem;
   }
-  .site-nav .links {
-    font-size: 1rem;
+  .site-nav {
+    .links {
+      font-size: 1rem;
+    }
+
+    a {
+      padding: 10px;
+    }
   }
 }
 
@@ -302,5 +345,9 @@ a.logo {
 
   .site-nav a {
     font-size: 0.7rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
   }
 }
