@@ -1,7 +1,7 @@
 extends layout
 
 mixin projectThumbnail(imgBw, imgColor, name, link)
-    .col-lg-4.col-md-6.col-sm-6
+    .col-sm-6.col-lg-4
         .project
             a(href=link)
                 span.project-label
@@ -11,71 +11,109 @@ mixin projectThumbnail(imgBw, imgColor, name, link)
 
 
 block content
-    #projects.row
-        +projectThumbnail(
-            '../assets/images/pintclone_bw.jpg',
-            '../assets/images/pintclone.jpg',
-            'Pintclone',
-            '/pintclone.html'
-            )
-            p.project-title Pinterest Clone
-        +projectThumbnail(
-            '../assets/images/multilingual_bw.jpg',
-            '../assets/images/multilingual.jpg',
-            'Multilingual Portfolio',
-            '/multilingual.html'
-            )
-            p.project-title Multilingual
-            p.project-title Portfolio
-        +projectThumbnail(
-            '../assets/images/bookTrader_bw.png',
-            '../assets/images/bookTrader.png',
-            'Book Trader',
-            '/bookTrader.html'
-            )
-            p.project-title Book Trading
-            p.project-title Club 
-        +projectThumbnail(
-            '../assets/images/compareStocks_bw.png',
-            '../assets/images/compareStocks.png',
-            'Compare Stocks',
-            '/compareStocks.html'
-            )
-            p.project-title Compare Stocks
-        +projectThumbnail(
-            '../assets/images/barsvp_bw.jpg',
-            '../assets/images/barsvp.jpg',
-            'BaRSVP',
-            '/barsvp.html'
-            )
-            p.project-title Nightlife
-            p.project-title Coordination
-        +projectThumbnail(
-            '../assets/images/quickPoll_bw.png',
-            '../assets/images/quickPoll.png',
-            'Quick Poll',
-            '/quickPoll.html'
-            )
-            p.project-title Voting App
-        +projectThumbnail(
-            '../assets/images/boilerplate_bw.jpg',
-            '../assets/images/boilerplate.jpg',
-            'Full Stack Boilerplate',
-            '/boilerplate.html'
-            )
-            p.project-title Full Stack
-            p.project-title Boilerplate
-        +projectThumbnail(
-            '../assets/images/d3_bw.jpg',
-            '../assets/images/d3.jpg',
-            'D3 Projects',
-            '/d3.html'
-            )
-            p.project-title D3 Projects
-        +projectThumbnail(
-            '../assets/images/frontend_bw.jpg',
-            '../assets/images/frontend.jpg',
-            'Frontend Projects',
-            '/frontend.html'
-            )
-            p.project-title Frontend Projects
+  h1.title 
+      span.firstLetter P
+      | rojects
+  hr
+  #projects.row
+    +projectThumbnail(
+      '../assets/images/pintclone_bw.jpg',
+      '../assets/images/pintclone.jpg',
+      'Pintclone',
+      '/pintclone.html'
+      )
+      p.project-title Pinterest Clone
+    +projectThumbnail(
+      '../assets/images/multilingual_bw.jpg',
+      '../assets/images/multilingual.jpg',
+      'Multilingual Portfolio',
+      '/multilingual.html'
+      )
+      p.project-title Multilingual
+      p.project-title Portfolio
+    +projectThumbnail(
+      '../assets/images/bookTrader_bw.png',
+      '../assets/images/bookTrader.png',
+      'Book Trader',
+      '/bookTrader.html'
+      )
+      p.project-title Book Trading
+      p.project-title Club 
+    +projectThumbnail(
+      '../assets/images/compareStocks_bw.png',
+      '../assets/images/compareStocks.png',
+      'Compare Stocks',
+      '/compareStocks.html'
+      )
+      p.project-title Compare Stocks
+    +projectThumbnail(
+      '../assets/images/barsvp_bw.jpg',
+      '../assets/images/barsvp.jpg',
+      'BaRSVP',
+      '/barsvp.html'
+      )
+      p.project-title Nightlife
+      p.project-title Coordination
+    +projectThumbnail(
+      '../assets/images/quickPoll_bw.png',
+      '../assets/images/quickPoll.png',
+      'Quick Poll',
+      '/quickPoll.html'
+      )
+      p.project-title Voting App
+    +projectThumbnail(
+      '../assets/images/boilerplate_bw.jpg',
+      '../assets/images/boilerplate.jpg',
+      'Full Stack Boilerplate',
+      '/boilerplate.html'
+      )
+      p.project-title Full Stack
+      p.project-title Boilerplate
+    +projectThumbnail(
+      '../assets/images/d3_bw.jpg',
+      '../assets/images/d3.jpg',
+      'D3 Projects',
+      '/d3.html'
+      )
+      p.project-title D3 Projects
+    +projectThumbnail(
+      '../assets/images/react_bw.jpg',
+      '../assets/images/react.jpg',
+      'React Projects',
+      '/react.html'
+      )
+      p.project-title React Projects
+    +projectThumbnail(
+      '../assets/images/frontend_bw.jpg',
+      '../assets/images/frontend.jpg',
+      'Frontend Projects',
+      '/frontend.html'
+      )
+      p.project-title Frontend Projects
+  #about
+    h1.title 
+      span.firstLetter A
+      | bout Me
+    hr
+    p Hi I’m Kevin!
+    p
+      | I built this portfolio to show my journey into web development. The projects are organized in 
+      | chronological order, starting from the most recently completed. 
+    p
+      | A year ago I had never touched web development, sticking mostly to Java during my studies, with 
+      | some python thrown in for scripting tasks and the occasional C# project. 
+    p
+      | After completing my MSc in Computer Science,  I took some time off to go travelling and to try new things.
+    p
+      | I opened and ran an artisan baked good market stall for half a year. The experience was enjoyable and 
+      | allowed me to improve my communication, marketing, and business know-how.
+    p
+      | After that, I tried my hand at internet marketing. As part of my internet marketing  experience, I made 
+      | simple websites and found that I really enjoyed this portion of the job. During this time, I found Free 
+      | Code Camp and started dabbling in their curriculum. I was drawn to the project-based learning and the 
+      | chance to help nonprofits. As I found myself spending more and more time learning web development and less 
+      | time focusing on internet marketing I decided in October of 2016 to follow my passion and dedicate full 
+      | time to learning web development.
+    p
+      | In between these, I also travelled around the United States, Europe, and New Zealand as well as spent 
+      | my time enjoying my hobbies including woodworking and hiking.
