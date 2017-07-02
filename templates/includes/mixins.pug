@@ -6,6 +6,7 @@ mixin project(img, title, subTitle, demoLink, sourceLink)
        a.btn(href=demoLink target='_blank' rel='noopener noreferrer') View Demo
       if sourceLink
         a.btn(href=sourceLink target='_blank' rel='noopener noreferrer') View Source
+        p.note A full list of dependencies can be found in package.json of the source.
     .col-md-6.text-wrapper
       h1=title
       if subTitle
