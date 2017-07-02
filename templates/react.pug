@@ -1,0 +1,61 @@
+extends layout
+
+include includes/mixins.pug
+
+block content
+  +project(
+    '../assets/images/react.jpg',
+    'React Projects',
+    '',
+    '',
+    ''
+  )
+    p
+      | Built 5 React projects:
+    ul
+      li
+        p(style="margin: 0;")
+          a(href='https://kevinnorris.github.io/DungeonCrawl/') Dungeon Crawler 
+          | (
+          a(href='https://github.com/kevinnorris/DungeonCrawl') source
+          | )
+      li
+        a(href='https://codepen.io/kevinnorris/full/kkXaGR/') Game of Life
+      li
+        a(href='https://codepen.io/kevinnorris/full/amOVym/') Recipe Box
+      li
+        a(href='https://codepen.io/kevinnorris/full/QKbLGQ/') Camper Leaderboard
+      li
+        a(href='https://codepen.io/kevinnorris/full/QKwAYq/') Markdown Previewer
+    
+    p
+      | The Dungeon Crawler was my first time building a project with webpack, using Babel to transpile 
+      a(href='http://es6-features.org/#Constants') ES6 
+      | and using Redux to manage the application state.
+    hr
+    .row.tech-icon-wrapper
+      .col-sm-6.languages
+        p.tech-title Languages
+        ul
+          li
+            a(href='https://www.javascript.com/') JavaScrip
+          li
+            a(href='http://sass-lang.com/') Sass
+          li
+            p HTML  
+      .col-sm-6.libraries
+        p.tech-title Libraries                   
+        ul
+          li
+            a(href='https://facebook.github.io/react/') React
+          li
+            a(href='http://redux.js.org/') Redux
+          li              
+            a(href='http://getbootstrap.com/') Bootstrap
+      .col-sm-6.tools
+        p.tech-title Tools
+        ul
+          li
+            a(href='https://webpack.github.io/') Webpack
+          li
+            a(href='https://babeljs.io/') Babel
